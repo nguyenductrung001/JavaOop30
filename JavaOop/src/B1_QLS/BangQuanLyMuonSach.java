@@ -100,9 +100,9 @@ public class BangQuanLyMuonSach {
             do {
 
                 System.out.println("Danh sach ma sach: ");
-//                for (BanDoc banDoc : listBd) {
-//                    System.out.println(bd.getMaBanDoc());
-//                }
+                for (Sach sach : listSach) {
+                    System.out.println(sach.getMaSach());
+                }
                 System.out.println("Moi ban chon Ma sach: ");
                 String maSach = sc.nextLine();
 
@@ -137,6 +137,6 @@ public class BangQuanLyMuonSach {
     private boolean kiemTraMaBanDoc(String maBanDoc, List<BanDoc> listBd) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   
+ 
 
 }

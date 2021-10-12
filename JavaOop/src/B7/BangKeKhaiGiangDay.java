@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class BangKeKhaiGiangDay {
 
-    ArrayList<BangKeKhaiGiangDay> listKeKhai = new ArrayList<>();
+   static ArrayList<BangKeKhaiGiangDay> listKeKhai = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
     private GiangVien giangvien;
     private List<Integer> lop = new ArrayList<>();
@@ -122,10 +122,34 @@ public class BangKeKhaiGiangDay {
                 List<Integer> _lop = kkgd.getLop();
                 _lop.add(slLop);
                 kkgd.setLop(_lop);
-                System.out.println(kkgd);
+               listKeKhai.add(kkgd);
 
             }
+            System.out.println(listKeKhai);
+            
         }
+    }
+    
+    public void xapSepTheoTen(){
+        System.out.println("Danh sach giao vien khi sắp xếp theo tên la: ");
+        for (int i = 0; i<listKeKhai.size() ; i++) {
+            for (int j = listKeKhai.size()-1; j>1 ;j--) {
+             BangKeKhaiGiangDay bj = listKeKhai.get(j);
+                BangKeKhaiGiangDay bjj = listKeKhai.get(j - 1);
+                String ten1[] = bj.getGiangvien().getHoTen().split(" ");
+                String ten2[] = bjj.getGiangvien().getHoTen().split(" ");
+                
+                if (ten1[ten1.length - 1].compareTo(ten2[ten2.length - 1]) < 0) {
+
+                    listKeKhai.set(j, bjj);
+                    listKeKhai.set(j - 1, bj);
+                }
+            }
+            
+        }listKeKhai.forEach(e -> {
+            System.out.println(e);
+        });
+    
     }
 
 }

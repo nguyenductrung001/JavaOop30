@@ -103,9 +103,9 @@ public class GiangVien {
         System.out.println("moi ban nhap so luong giao vien muon nhap: ");
         int sl = sc.nextInt();
         for (int i = 0; i < sl; i++) {
+            sc.nextLine();
             System.out.print("moi ban nhap ho ten: ");
             String ht = sc.nextLine();
-            sc.nextLine();
             System.out.print("moi ban nhap dia chi: ");
             String dc = sc.nextLine();
             System.out.print("moi ban nhap so dien thoai: ");
@@ -144,9 +144,43 @@ public class GiangVien {
        
 
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
      public void xuatGv(){
-            listGv.forEach((s) -> {
-            System.out.println(s);
-        });
+          for (int i = 0; i < listGv.size()-1; i++) {
+              System.out.println(listGv);
+             System.out.println( );
+                      
+             
+         }
         }
 }

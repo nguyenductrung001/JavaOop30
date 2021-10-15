@@ -60,7 +60,7 @@ public class Main {
                         xapSepTheoTen();
                         break;
                     case 7:
-//                        bangLuongGiaoVien();
+                        xapSepTheoSoLuong();
                         break;
 //                    case 8:
 //                        SxTheoLuong();
@@ -211,5 +211,30 @@ public class Main {
         }
     
     }
-
+    public static int tinhTong(MuaHang muaHang){
+        int a =0 ;
+        for (int i = 0; i < muaHang.soLuong.length; i++) {
+            a = a+ muaHang.soLuong[i];
+            
+            
+        }
+        
+        return  a;
+    }
+    public static void xapSepTheoSoLuong(){
+        MuaHang tg ;
+        for (int i = 0; i < muaHangs.length-1; i++) {
+            for (int j = i+1; j < muaHangs.length; j++) {
+              if(tinhTong(muaHangs[i])>tinhTong(muaHangs[j])){
+                tg = muaHangs[i];
+                muaHangs[i] = muaHangs[j];
+                muaHangs[j] = tg;
+            }
+            
+        }
+    }
+    for(MuaHang muaHang : muaHangs){
+            System.out.println(muaHang);
+        }
+    }
 }
